@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    gap: 15vw;
+    height: 100vh;
+    width: 100%;
+    padding: 80px 100px 20px 100px;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+    height: 100%;
+}
+
+.header {}
+
+.heading {}
+
+.subHeading {
+    font-size: 2.5rem;
+}
+
+.selectedGenres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.selectedGenre {
+    background: #148A08;
+    padding: 5px 15px;
+    border-radius: 50px;
+    min-width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selectedGenre span {
+    color: #085C00;
+    font-weight: 600;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.genreGrid {
+    width: 85%;
+    height: 80%;
+}
+
+.nextBtn {
+    all: unset;
+    align-self: flex-end;
+    width: 100px;
+    background: #148A08;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-right: 15%;
+}

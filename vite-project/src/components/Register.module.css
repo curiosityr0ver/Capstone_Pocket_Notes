@@ -8,8 +8,6 @@
     justify-content: space-evenly;
 }
 
-
-
 .header {
     display: flex;
     flex-direction: column;
@@ -18,21 +16,28 @@
     margin-top: 20px;
 }
 
-
-
 .form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 40px;
 }
 
 .form input {
-    padding: 10px;
+    padding: 12px 15px;
     border: none;
     background: #292929;
-    color: #7C7C7C;
+    color: lightgray;
     border-radius: 3px;
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form button {
@@ -48,4 +53,38 @@
 .footer span {
     color: #72DB73;
     cursor: pointer;
+}
+
+.errorInput {
+    border: 2px solid red !important;
+}
+
+.errorText {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -20px;
+    left: 2px;
+}
+
+.checkboxWrapper {
+    position: relative;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    margin: 0;
+    margin-right: 10px;
+    width: auto;
+}
+
+.checkboxWrapper .errorText {
+    position: static;
+    margin-top: 5px;
+    margin-left: 0;
+    /* Removed the left margin */
 }
