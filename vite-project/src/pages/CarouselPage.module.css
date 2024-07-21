@@ -27,5 +27,4 @@
 
 .newsWidget {
     grid-area: 1 / 3 / 4 / 4;
-    background-color: rgba(205, 180, 0, 0.5);
 }

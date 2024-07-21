@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
-const WikiplaceWidget = () => {
+import styles from "./NewsWidget.module.css";
+import formatDate from "../utils/formatDate";
+import altThumbnail from "../assets/alt.png";
+const NewsWidget = () => {
 	const [article, setArticle] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -14,42 +16,40 @@ const WikiplaceWidget = () => {
 		setLoading(true);
 		setError(null);
 		try {
-			const response = await axios.get(
-				"https://en.wikipedia.org/api/rest_v1/page/random/summary"
-			);
+			const url =
+				"https://newsapi.org/v2/everything?q=India&apiKey=0c5c92401f634682b413d8fb58fb70a2";
 
-			if (response.data.type === "standard" && response.data.coordinates) {
-				setArticle(response.data);
-			} else {
-				// If the article is not about a place, fetch another one
-				fetchRandomArticle();
-			}
+			const response = await axios.get(url);
+			console.log(response.data.articles[0]);
+			const randomArticle = Math.floor(
+				Math.random() * response.data.articles.length
+			);
+			setArticle(response.data.articles[randomArticle]);
 		} catch (err) {
-			setError("Failed to fetch article. Please try again.");
+			setError(`Failed to fetch article: ${err.message}`);
 		} finally {
 			setLoading(false);
 		}
 	};
 
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>{error}</div>;
+	if (loading) return <div className={styles.loading}>Loading...</div>;
+	if (error) return <div className={styles.error}>{error}</div>;
 	if (!article) return null;
 
 	return (
-		<div className="wikiplace-widget">
-			<h2>{article.title}</h2>
-			{article.thumbnail && (
-				<img
-					src={article.thumbnail.source}
-					alt={article.title}
-					width={article.thumbnail.width}
-					height={article.thumbnail.height}
-				/>
-			)}
-			<p>{article.extract}</p>
-			<button onClick={fetchRandomArticle}>Get Another Place</button>
+		<div className={styles.widget}>
+			<div className={styles.thumbnailContainer}>
+				<img src={article.urlToImage} className={styles.thumbnail} alt={alt} />
+				<div className={styles.footer}>
+					<h2 className={styles.title}>{article.title}</h2>
+					<p className={styles.publishedAt}>
+						{formatDate(article.publishedAt)}
+					</p>
+				</div>
+			</div>
+			<p className={styles.description}>{article.description}</p>
 		</div>
 	);
 };
 
-export default WikiplaceWidget;
+export default NewsWidget;
