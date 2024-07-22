@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./NewsWidget.module.css";
 import formatDate from "../utils/formatDate";
-import altThumbnail from "../assets/alt.png";
 const NewsWidget = () => {
 	const [article, setArticle] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -20,10 +19,10 @@ const NewsWidget = () => {
 				"https://newsapi.org/v2/everything?q=India&apiKey=0c5c92401f634682b413d8fb58fb70a2";
 
 			const response = await axios.get(url);
-			console.log(response.data.articles[0]);
 			const randomArticle = Math.floor(
 				Math.random() * response.data.articles.length
 			);
+			console.log(response.data.articles[randomArticle]);
 			setArticle(response.data.articles[randomArticle]);
 		} catch (err) {
 			setError(`Failed to fetch article: ${err.message}`);
@@ -39,7 +38,11 @@ const NewsWidget = () => {
 	return (
 		<div className={styles.widget}>
 			<div className={styles.thumbnailContainer}>
-				<img src={article.urlToImage} className={styles.thumbnail} alt={alt} />
+				<img
+					src={article.urlToImage}
+					className={styles.thumbnail}
+					alt={article.title}
+				/>
 				<div className={styles.footer}>
 					<h2 className={styles.title}>{article.title}</h2>
 					<p className={styles.publishedAt}>

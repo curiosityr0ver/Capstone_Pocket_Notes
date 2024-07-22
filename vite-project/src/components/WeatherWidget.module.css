@@ -1,0 +1,38 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background: #101744;
+    border-radius: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #FF4ADE;
+    border-radius: 20px 20px 0 0;
+}
+
+.date,
+.time {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0px;
+}
+
+.weather {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.weather {
+    filter: grayscale(80%);
+}
+
+.cell {}

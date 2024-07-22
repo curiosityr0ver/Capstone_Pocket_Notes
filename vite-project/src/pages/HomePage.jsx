@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./HomePage.module.css";
 import GenreGrid from "../components/GenreGrid";
 import { useNavigate } from "react-router-dom";

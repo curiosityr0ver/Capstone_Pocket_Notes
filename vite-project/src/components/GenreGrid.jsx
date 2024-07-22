@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import genres from "../data/genres";
 import styles from "./GenreGrid.module.css";
 
@@ -27,5 +28,10 @@ function GenreGrid({ selectedGenres, setSelectedGenres }) {
 		</div>
 	);
 }
+
+GenreGrid.propTypes = {
+	selectedGenres: PropTypes.array.isRequired,
+	setSelectedGenres: PropTypes.func.isRequired,
+};
 
 export default GenreGrid;

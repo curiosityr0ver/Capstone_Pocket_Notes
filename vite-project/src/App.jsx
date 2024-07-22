@@ -1,4 +1,5 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
@@ -49,4 +50,7 @@ function App() {
 	);
 }
 
+ProtectedRoute.propTypes = {
+	children: PropTypes.node.isRequired,
+};
 export default App;
