@@ -23,7 +23,7 @@ const NewsWidget = () => {
 				Math.random() * response.data.articles.length
 			);
 			setArticle(response.data.articles[randomIndex]);
-			console.log(response.data.articles[randomIndex]);
+			// console.log(response.data.articles[randomIndex]);
 		} catch (err) {
 			setError(`Failed to fetch article: ${err.message}`);
 		} finally {
