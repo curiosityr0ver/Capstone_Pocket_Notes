@@ -1,5 +1,5 @@
 {
-    "routes": [
-        { "src": "/(.*)", "dest": "https://$1" }
-    ]
- }
+  "rewrites": [
+    { "source": "**", "destination": "/index.html" }
+  ]
+}
