@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./NewsWidget.module.css";
 import formatDate from "../utils/formatDate";
+import altBackground from "../assets/alt.png";
 const NewsWidget = () => {
 	const [article, setArticle] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -39,14 +40,14 @@ const NewsWidget = () => {
 		<div className={styles.widget}>
 			<div className={styles.thumbnailContainer}>
 				<img
-					src={article.urlToImage || "https://via.placeholder.com/150"}
+					src={article.urlToImage || altBackground}
 					className={styles.thumbnail}
 					alt={article.title}
 				/>
 				<div className={styles.footer}>
 					<h2 className={styles.title}>{article.title}</h2>
 					<p className={styles.publishedAt}>
-						{formatDate(article.publishedAt)}
+						{formatDate(article.publishedAt).join("  |  ")}
 					</p>
 				</div>
 			</div>

@@ -2,6 +2,7 @@ import styles from "./CarouselPage.module.css";
 import WikiplaceWidget from "../components/NewsWidget";
 import ProfileWidget from "../components/ProfileWidget";
 import WeatherWidget from "../components/WeatherWidget";
+import TimerWidget from "../components/TimerWidget";
 
 function CarouselPage() {
 	const user = JSON.parse(localStorage.getItem("user"));
@@ -9,19 +10,16 @@ function CarouselPage() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.profileWidget}>
-				<ProfileWidget
+				{/* <ProfileWidget
 					name={user.name}
 					email={user.email}
 					userName={user.userName}
 					selectedGenres={selectedGenres}
-				/>
+				/> */}
+				<TimerWidget />
 			</div>
-			<div className={styles.weatherWidget}>
-				<WeatherWidget />
-			</div>
-			<div className={styles.newsWidget}>
-				<WikiplaceWidget />
-			</div>
+			<div className={styles.weatherWidget}>{/* <WeatherWidget /> */}</div>
+			<div className={styles.newsWidget}>{/* <WikiplaceWidget /> */}</div>
 		</div>
 	);
 }
