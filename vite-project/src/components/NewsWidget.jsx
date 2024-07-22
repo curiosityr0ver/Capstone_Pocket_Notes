@@ -16,14 +16,14 @@ const NewsWidget = () => {
 		setError(null);
 		try {
 			const url =
-				"https://newsapi.org/v2/everything?q=India&apiKey=0c5c92401f634682b413d8fb58fb70a2";
+				"https://newsapi.org/v2/top-headlines?country=in&apiKey=f2e03942dc6c42cb98c69b9650b469d1";
 
 			const response = await axios.get(url);
-			const randomArticle = Math.floor(
+			const randomIndex = Math.floor(
 				Math.random() * response.data.articles.length
 			);
-			console.log(response.data.articles[randomArticle]);
-			setArticle(response.data.articles[randomArticle]);
+			setArticle(response.data.articles[randomIndex]);
+			console.log(response.data.articles[randomIndex]);
 		} catch (err) {
 			setError(`Failed to fetch article: ${err.message}`);
 		} finally {
@@ -39,7 +39,7 @@ const NewsWidget = () => {
 		<div className={styles.widget}>
 			<div className={styles.thumbnailContainer}>
 				<img
-					src={article.urlToImage}
+					src={article.urlToImage || "https://via.placeholder.com/150"}
 					className={styles.thumbnail}
 					alt={article.title}
 				/>

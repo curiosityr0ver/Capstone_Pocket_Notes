@@ -19,7 +19,9 @@ function CarouselPage() {
 			<div className={styles.weatherWidget}>
 				<WeatherWidget />
 			</div>
-			<div className={styles.newsWidget}>{/* <WikiplaceWidget /> */}</div>
+			<div className={styles.newsWidget}>
+				<WikiplaceWidget />
+			</div>
 		</div>
 	);
 }

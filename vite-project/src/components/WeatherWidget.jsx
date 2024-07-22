@@ -13,7 +13,8 @@ function WeatherWidget() {
 	const getWeather = async () => {
 		try {
 			const API_KEY = "f9f0629e451c480aa08144000240804";
-			const BASE_URL = "https://api.weatherapi.com/v1";
+			const BASE_URL =
+				"/api/v1/current.json?key=f9f0629e451c480aa08144000240804&q=Delhi";
 			const params = {
 				key: API_KEY,
 				q: "Delhi",
