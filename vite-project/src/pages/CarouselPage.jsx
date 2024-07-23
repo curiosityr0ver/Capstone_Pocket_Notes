@@ -2,7 +2,6 @@ import styles from "./CarouselPage.module.css";
 import WikiplaceWidget from "../components/NewsWidget";
 import ProfileWidget from "../components/ProfileWidget";
 import WeatherWidget from "../components/WeatherWidget";
-import TimerWidget from "../components/TimerWidget";
 
 function CarouselPage() {
 	const user = JSON.parse(localStorage.getItem("user"));

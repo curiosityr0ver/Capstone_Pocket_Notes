@@ -1,38 +1,71 @@
 .container {
     height: 100%;
     width: 100%;
-    background: #101744;
-    border-radius: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    box-sizing: border-box;
+    padding: 10px 20px;
     background: #FF4ADE;
-    border-radius: 20px 20px 0 0;
 }
 
 .date,
 .time {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 0;
-    padding: 0px;
 }
 
 .weather {
     display: flex;
+    flex: 1;
+    background: #101744;
+    align-items: center;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
-    align-items: flex-end;
-    padding: 10px;
-    box-sizing: border-box;
+    text-align: center;
+    height: 70%;
+    padding: 15px 10px;
 }
 
-.weather {
-    filter: grayscale(80%);
+.column:not(:last-child) {
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.cell {}
+.column i {
+    font-size: 2.5rem;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.infoItem i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.infoItem span {
+    text-align: left;
+}

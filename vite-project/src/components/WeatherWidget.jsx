@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./WeatherWidget.module.css";
 import formatDate from "../utils/formatDate";
 import axios from "axios";
+
 function WeatherWidget() {
 	const [weather, setWeather] = useState();
 	const formattedDate = formatDate(new Date());
@@ -12,16 +13,13 @@ function WeatherWidget() {
 
 	const getWeather = async () => {
 		try {
-			const API_KEY = "f9f0629e451c480aa08144000240804";
+			const API_KEY = import.meta.env.VITE_APP_WEATHER_API_KEY;
 			const BASE_URL = "https://api.weatherapi.com/v1";
 			const params = {
 				key: API_KEY,
 				q: "Delhi",
 			};
-			const response = await axios.get(`${BASE_URL}/current.json`, {
-				params,
-			});
-			console.log(response.data.current);
+			const response = await axios.get(`${BASE_URL}/current.json`, { params });
 			setWeather(response.data.current);
 		} catch (error) {
 			console.error(error);
@@ -34,20 +32,28 @@ function WeatherWidget() {
 				<p className={styles.date}>{formattedDate[0]}</p>
 				<p className={styles.time}>{formattedDate[1]}</p>
 			</div>
-			{/* weather forecast, temp, pressure, wind and humidity*/}
 			{weather && (
 				<div className={styles.weather}>
-					<div className={styles.cell}>
-						<img src={weather.condition.icon} alt="Weather Icon" />
+					<div className={styles.column}>
+						<i className="fas fa-cloud-showers-heavy"></i>
 						<p>{weather.condition.text}</p>
 					</div>
-					<div className={styles.cell}>
-						<p>Temperature: {weather.temp_c}°C</p>
-						<p>Pressure: {weather.pressure_mb} mb</p>
+					<div className={styles.column}>
+						<p className={styles.temperature}>{weather.temp_c}°C</p>
+						<p className={styles.infoItem}>
+							<i className="fas fa-tachometer-alt"></i>
+							<span>{weather.pressure_mb} mbar Pressure</span>
+						</p>
 					</div>
-					<div className={styles.cell}>
-						<p>Humidity: {weather.humidity}%</p>
-						<p>Wind: {weather.wind_kph} km/h</p>
+					<div className={styles.column}>
+						<p className={styles.infoItem}>
+							<i className="fas fa-wind"></i>
+							<span>{weather.wind_kph} km/h Wind</span>
+						</p>
+						<p className={styles.infoItem}>
+							<i className="fas fa-tint"></i>
+							<span>{weather.humidity}% Humidity</span>
+						</p>
 					</div>
 				</div>
 			)}

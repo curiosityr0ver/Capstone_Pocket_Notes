@@ -55,6 +55,11 @@
 }
 
 @container (min-width: 600px) {
+
+    .avatar {
+        margin-left: 30px;
+    }
+
     .profile {
         display: flex;
         flex-direction: column;

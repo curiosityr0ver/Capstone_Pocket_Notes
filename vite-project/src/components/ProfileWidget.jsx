@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProfileWidget.module.css";
 import profileImg from "../assets/profile.png";
 import PropTypes from "prop-types";
