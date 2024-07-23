@@ -1,9 +1,11 @@
 .container {
+    container-type: inline-size;
     display: flex;
     height: 100%;
     width: 100%;
     background: #5746EA;
-    padding: 30px;
+    padding: 10px;
+    /* Reduced padding */
     box-sizing: border-box;
     border-radius: 20px;
 }
@@ -22,39 +24,35 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 40px 0px;
-    justify-content: space-evenly;
-
+    /* background-color: yellow; */
+    padding: 25px 0px;
+    justify-content: space-around;
 }
 
-.profile p {
-    margin: 0;
-    padding: 0;
-}
 
-.name {
-    font-size: 1.5rem;
-}
 
+.name,
 .email {
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
 .username {
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .selectedGenres {
     margin-top: 20px;
     max-width: 80%;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .genre {
     background: #9F94FF;
-    padding: 6px 80px 6px 20px;
+    padding: 4px 20px;
+    /* Reduced padding */
     border-radius: 50px;
+    font-size: 0.9rem;
 }

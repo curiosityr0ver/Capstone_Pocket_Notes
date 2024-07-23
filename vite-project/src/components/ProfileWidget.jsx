@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./ProfileWidget.module.css";
 import profileImg from "../assets/profile.png";
 import PropTypes from "prop-types";
@@ -6,6 +7,7 @@ function ProfileWidget() {
 	const user = JSON.parse(localStorage.getItem("user"));
 	const selectedGenres = JSON.parse(localStorage.getItem("selectedGenres"));
 	const { name, email, userName } = user;
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.avatar}>
