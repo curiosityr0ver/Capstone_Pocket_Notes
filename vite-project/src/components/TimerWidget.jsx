@@ -49,7 +49,7 @@ const TimerWidget = () => {
 					isPlaying={isRunning}
 					duration={totalSeconds}
 					colors={["#FF6A6A"]} // Example thresholds for color changes
-					size={200}
+					size={170}
 					strokeWidth={6}
 					strokeLinecap="round"
 					trailColor="transparent"

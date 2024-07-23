@@ -6,7 +6,7 @@
     background-color: black;
     color: white;
     display: grid;
-    padding: 50px 90px;
+    padding: 30px 60px;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 40px;
