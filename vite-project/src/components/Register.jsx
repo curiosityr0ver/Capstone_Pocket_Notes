@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
+import { AppContext } from "../context/AppContext";
 
 function Register() {
 	const [name, setName] = useState("");
@@ -9,6 +10,7 @@ function Register() {
 	const [mobile, setMobile] = useState("");
 	const [consent, setConsent] = useState(false);
 	const [errors, setErrors] = useState({});
+	const { setUser } = useContext(AppContext);
 	const navigate = useNavigate();
 
 	const validateForm = () => {
@@ -25,14 +27,7 @@ function Register() {
 	const handleSubmit = () => {
 		if (validateForm()) {
 			console.log("Form submitted successfully");
-			localStorage.setItem(
-				"user",
-				JSON.stringify({
-					name,
-					userName,
-					email,
-				})
-			);
+			setUser({ name, userName, email, mobile });
 			navigate("/");
 		}
 	};
