@@ -10,16 +10,19 @@ function CarouselPage() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.profileWidget}>
-				{/* <ProfileWidget
+				<ProfileWidget
 					name={user.name}
 					email={user.email}
 					userName={user.userName}
 					selectedGenres={selectedGenres}
-				/> */}
-				<TimerWidget />
+				/>
 			</div>
-			<div className={styles.weatherWidget}>{/* <WeatherWidget /> */}</div>
-			<div className={styles.newsWidget}>{/* <WikiplaceWidget /> */}</div>
+			<div className={styles.weatherWidget}>
+				<WeatherWidget />
+			</div>
+			<div className={styles.newsWidget}>
+				<WikiplaceWidget />
+			</div>
 		</div>
 	);
 }

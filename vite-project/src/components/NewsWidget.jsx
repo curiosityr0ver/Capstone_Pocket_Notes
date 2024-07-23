@@ -37,7 +37,7 @@ const NewsWidget = () => {
 	if (!article) return null;
 
 	return (
-		<div className={styles.widget}>
+		<div className={styles.container}>
 			<div className={styles.thumbnailContainer}>
 				<img
 					src={article.urlToImage || altBackground}

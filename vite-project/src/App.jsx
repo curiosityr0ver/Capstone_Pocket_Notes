@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import CarouselPage from "./pages/CarouselPage";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 const ProtectedRoute = ({ children }) => {
@@ -41,6 +42,14 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<CarouselPage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/dashboard"
+					element={
+						<ProtectedRoute>
+							<Dashboard />
 						</ProtectedRoute>
 					}
 				/>

@@ -1,6 +1,5 @@
 .container {
     background: #1E2343;
-
     color: white;
     display: flex;
     flex-direction: row;
@@ -8,15 +7,13 @@
     padding: 10px;
     height: 100%;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
+    border-radius: 20px;
 }
 
 .progress {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 230px;
-    width: 230px;
+    padding: 12px;
     background: #191E39;
     border-radius: 50%;
     box-shadow: 0px 6px 26px 0px #0000009C inset;
@@ -27,48 +24,44 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 10px;
     height: 100%;
     width: 100%;
-    padding: 20px;
+    padding: 25px 80px;
 }
 
 .timeUnits {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
-
+    /* background-color: yellow; */
 }
 
 .timeUnit {
     display: flex;
     flex-direction: column;
-    flex: 1;
     text-align: center;
+    /* background-color: orange; */
 }
 
 .timeUnit p {
     font-size: 1.5rem;
+    color: #949494;
+}
+
+
+.timeUnit i {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #949494;
 }
 
 .timeUnit span {
-    font-size: 3rem;
-}
-
-.timeUnit i {
-    background: none;
-    border: none;
     font-size: 2rem;
-    cursor: pointer;
-    color: white;
-    /* Ensure button text is visible */
-}
-
-
-
-.timerWrapper {
-    margin: 20px 0;
 }
 
 .startStopButton {

@@ -93,7 +93,6 @@ const TimerWidget = () => {
 						<i onClick={decrement(1)} className="fas fa-chevron-down" />
 					</div>
 				</div>
-
 				<button onClick={handleStartStop} className={styles.startStopButton}>
 					{isRunning ? "Stop" : "Start"}
 				</button>
